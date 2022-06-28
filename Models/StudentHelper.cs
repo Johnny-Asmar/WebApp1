@@ -52,5 +52,23 @@ public class StudentHelper : IStudentHelper
         var dateNow = DateTime.Now;
         return dateNow.ToString(CultureInfo.CreateSpecificCulture(language));
     }
-    
+
+    public Student ChangeNameStudent(List<Student> students, int id, string name)
+    {
+        for (int i = 0; i < students.Count; i++)
+        {
+            if (students[i].Id == id)
+            {
+                students[i].name = name;
+                return students[i];
+            }
+                
+            else
+            {
+                Console.WriteLine("Student not found in this id");
+            }
+        }
+
+        return null;
+    }
 }
