@@ -73,4 +73,13 @@ public class StudentController : ControllerBase
         return _studentHelper.NameContains(StudentList, name);
     }
     
+    [HttpGet("GetDate")]
+    
+    public async Task <string> GetDateforLang([FromQuery] string lang)
+    {
+        return _studentHelper.DateBase(lang);
+    }
+    
+    
+    
 }
