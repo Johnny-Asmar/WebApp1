@@ -1,3 +1,4 @@
+using System.Globalization;
 using WebApplication1.Abstraction;
 
 namespace WebApplication1.Models;
@@ -44,6 +45,12 @@ public class StudentHelper : IStudentHelper
             Console.WriteLine("Students not found in this name");
         }
         return studentName;
+    }
+
+    public string DateBase(string language)
+    {
+        var dateNow = DateTime.Now;
+        return dateNow.ToString(CultureInfo.CreateSpecificCulture(language));
     }
     
 }

@@ -11,4 +11,6 @@ public interface IStudentHelper
      public List<Student> AddStudent(List<Student> Students, Student student);
 
      public List<Student> NameContains(List<Student> Students, string name);
+
+     public string DateBase(string language);
 }
