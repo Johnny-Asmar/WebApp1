@@ -13,4 +13,6 @@ public interface IStudentHelper
      public List<Student> NameContains(List<Student> Students, string name);
 
      public string DateBase(string language);
+
+     public Student ChangeNameStudent(List<Student> Students, int id, string name);
 }

@@ -80,6 +80,10 @@ public class StudentController : ControllerBase
         return _studentHelper.DateBase(lang);
     }
     
-    
+    [HttpPost("{id:int}")]
+    public async Task <Student> ChangeStudent([FromRoute] int id, string name)
+    {
+        return _studentHelper.ChangeNameStudent(StudentList, id, name);
+    }
     
 }
