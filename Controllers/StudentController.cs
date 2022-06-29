@@ -16,6 +16,8 @@ public class StudentController : ControllerBase
 
     private IStudentHelper _studentHelper;
     
+    
+    
     public StudentController(IStudentHelper studentHelper)
     {
         Student stud1 = new Student();
@@ -85,5 +87,13 @@ public class StudentController : ControllerBase
     {
         return _studentHelper.ChangeNameStudent(StudentList, id, name);
     }
-    
+
+    [HttpDelete()]
+    public async Task<List<Student>> DeleteStudent([FromBody]Student student)
+    {
+        return _studentHelper.DeleteStudent(StudentList, student);
+    }
+
+
+
 }

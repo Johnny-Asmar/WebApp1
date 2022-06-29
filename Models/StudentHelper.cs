@@ -12,12 +12,8 @@ public class StudentHelper : IStudentHelper
         {
             if (Students[i].Id == id)
                 return Students[i];
-            else
-            {
-                Console.WriteLine("Student not found");
-            }
         }
-
+        Console.WriteLine("Student not found");
         return null;
     }
 
@@ -62,12 +58,25 @@ public class StudentHelper : IStudentHelper
                 students[i].name = name;
                 return students[i];
             }
-                
-            else
+        }
+        
+        Console.WriteLine("Student not found in this id");
+        return null;
+    }
+
+ 
+
+    public List<Student> DeleteStudent(List<Student> students, Student stud)
+    {
+        for (int i = 0; i < students.Count; i++)
+        {
+            if (students[i].Equals(stud))
             {
-                Console.WriteLine("Student not found in this id");
+                students.Remove(students[i]);
+                return students;
             }
         }
+        Console.WriteLine("Student not found");
 
         return null;
     }

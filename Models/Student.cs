@@ -12,6 +12,19 @@ public class Student
     [EmailAddress(ErrorMessage = "Invalid Email Address")]
     public string email{ get; set; }
 
-    
+    public override bool Equals(object? obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+
+        if (!(obj is Student))
+        {
+            return false;
+        }
+
+        return this.Id == ((Student)obj).Id && this.name == ((Student)obj).name && this.email == ((Student)obj).email;
+    }
     
 }

@@ -15,4 +15,6 @@ public interface IStudentHelper
      public string DateBase(string language);
 
      public Student ChangeNameStudent(List<Student> Students, int id, string name);
+
+     public List<Student> DeleteStudent(List<Student> students, Student student);
 }
