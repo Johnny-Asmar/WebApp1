@@ -85,7 +85,7 @@ public class StudentController : ControllerBase
     [HttpPost("{id:int}")]
     public async Task <Student> ChangeStudent([FromRoute] int id, string name)
     {
-        return _studentHelper.ChangeNameStudent(StudentList, id, name);
+        return _studentHelper.UpdateStudent(StudentList, id, name);
     }
 
     [HttpDelete()]

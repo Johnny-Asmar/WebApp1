@@ -13,7 +13,8 @@ public class StudentHelper : IStudentHelper
             if (Students[i].Id == id)
                 return Students[i];
         }
-        Console.WriteLine("Student not found");
+
+        throw new StudentNotFoundException("Student not found in this id");
         return null;
     }
 
@@ -49,7 +50,7 @@ public class StudentHelper : IStudentHelper
         return dateNow.ToString(CultureInfo.CreateSpecificCulture(language));
     }
 
-    public Student ChangeNameStudent(List<Student> students, int id, string name)
+    public Student UpdateStudent(List<Student> students, int id, string name)
     {
         for (int i = 0; i < students.Count; i++)
         {
