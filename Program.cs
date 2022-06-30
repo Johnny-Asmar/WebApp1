@@ -1,4 +1,5 @@
 using WebApplication1.Abstraction;
+using WebApplication1.Helper;
 using WebApplication1.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages();
 
 builder.Services.AddScoped<IStudentHelper, StudentHelper>();
+builder.Services.AddScoped<IUploadImageHelper, UploadImageHelper>();
 
 var app = builder.Build();
 
@@ -21,10 +23,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-else
-{
-    app.UseHsts();
-}
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

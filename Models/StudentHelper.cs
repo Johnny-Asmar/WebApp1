@@ -61,7 +61,7 @@ public class StudentHelper : IStudentHelper
             }
         }
         
-        Console.WriteLine("Student not found in this id");
+        throw new StudentNotFoundException("Student not found in this id");
         return null;
     }
 
